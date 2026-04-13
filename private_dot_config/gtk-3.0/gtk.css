@@ -1,0 +1,93 @@
+/* 1. Importer les variables de matugen */
+@import 'colors.css';
+
+/* 2. Appliquer ces variables aux widgets GTK */
+
+/* Fond général et texte (fenêtre, popups, barre de titre, menus, statut, BARRE D'OUTILS) */
+window, .background, popover, headerbar, .dialog-vbox, menubar, statusbar, toolbar {
+  background-color: @window_bg_color;
+  color: @window_fg_color;
+}
+
+/* Arrière-plan des "vues" (listes, champs de texte) */
+view, textview, .view {
+  background-color: @view_bg_color;
+  color: @view_fg_color;
+}
+
+/* Boutons */
+button {
+  background-image: none;
+  background-color: @accent_bg_color;
+  color: @accent_fg_color;
+  border: none;
+  box-shadow: none;
+}
+button:hover {
+  background-color: shade(@accent_bg_color, 1.2);
+}
+button:active {
+  background-color: shade(@accent_bg_color, 0.8);
+}
+
+/* Éléments sélectionnés (surbrillance) */
+list row:selected, flowboxchild:selected, .selected {
+  background-color: @accent_color;
+  color: @accent_fg_color;
+}
+
+/* Infobulles (Tooltips) */
+tooltip {
+  background-color: @popover_bg_color;
+  color: @popover_fg_color;
+  border: 1px solid shade(@window_bg_color, 1.5);
+  padding: 4px;
+}
+tooltip label {
+  color: @popover_fg_color;
+}
+
+/* Barre de recherche ("barre de settings") */
+searchbar, .search-bar {
+  background-color: @window_bg_color;
+  color: @window_fg_color;
+  border-bottom: 1px solid shade(@window_bg_color, 1.5);
+}
+
+/* Champ de saisie DANS la barre de recherche */
+searchbar entry, .search-bar entry {
+  background-color: shade(@window_bg_color, 1.3);
+  color: @window_fg_color;
+  border: none;
+  box-shadow: none;
+}
+searchbar entry image {
+  color: @window_fg_color;
+}
+
+/* Interrupteur (Switch) */
+switch {
+  background-color: shade(@window_bg_color, 1.5);
+  border: none;
+  box-shadow: none;
+}
+switch slider {
+  background-color: shade(@window_bg_color, 2.0);
+}
+switch:checked {
+  background-color: @accent_color;
+}
+switch:checked slider {
+  background-color: @accent_fg_color;
+}
+
+/* Barre de statut (en bas) */
+statusbar {
+  background-color: @window_bg_color;
+  color: @window_fg_color;
+  border-top: 1px solid shade(@window_bg_color, 1.5);
+  padding: 4px;
+}
+statusbar label {
+  color: @window_fg_color;
+}
