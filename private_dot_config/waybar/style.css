@@ -1,13 +1,14 @@
 @import "colors.css";
 
-/* --- Configuration Globale --- */
+/* ==========================================================================
+   1. Globale Config 
+   ========================================================================== */
 * {
     font-size: 14px;
     font-family: "JetBrains";
     min-height: 0;
     border: none;
     border-radius: 0;
-
 }
 
 window#waybar {
@@ -16,45 +17,50 @@ window#waybar {
 }
 
 tooltip {
-  color: @on_background;
-  background-color: @background;
-  border-radius:20px;
+    color: @on_background;
+    background-color: @background;
+    border-radius: 20px;
 }
 
-/* --- Conteneurs de Modules --- */
+/* ==========================================================================
+   2. Modules & Main Ones
+   ========================================================================== */
 .modules-center {
-    padding: 0px 5px;
+    padding: 0 5px;
     margin: 5px 0 0 5px;
     border-radius: 10px;
     background-color: @primary;
     color: @on_primary;
 }
 
-/* --- Style commun pour les "Îlots" (groupes de modules) --- */
 #system,
 #work,
-#icons {
+#icons,
+#custom-spotify {
     padding: 0 5px;
     border-radius: 20px;
     margin: 5px 0 0 5px;
     color: @on_primary;
     background-color: @primary;
 }
-#custom-spotify{
-    padding: 0 2 0 7px;
-    border-radius: 20px;
-    margin: 5px 0 0 5px;
-    color: @on_primary;
-    background-color: @primary;
 
+/* Surcharge spécifique pour Spotify */
+#custom-spotify {
+    padding: 0 2px 0 7px;
 }
 
-#system{
+#system {
     margin-left: 10px;
     margin-right: 5px;
 }
 
-/* --- Padding de base pour la plupart des modules --- */
+#icons {
+    margin-right: 10px;
+}
+
+/* ==========================================================================
+   3. Padding & Marges of Modules
+   ========================================================================== */
 #clock,
 #network,
 #pulseaudio,
@@ -73,7 +79,17 @@ tooltip {
     padding: 0 5px;
 }
 
-/* --- Tailles de police spécifiques (souvent pour les icônes) --- */
+#battery {
+    padding: 0 3px;
+}
+
+#custom-expand_tasks {
+    margin: 0 5px;
+}
+
+/* ==========================================================================
+   4. Typo & Icon sizes
+   ========================================================================== */
 #network {
     font-size: 25px;
 }
@@ -87,77 +103,106 @@ tooltip {
 #expand, 
 #custom-tasks,
 #icons,
-#pulseaudio.muted { /* Ajout de #icons ici pour son font-size */
+#pulseaudio.muted {
     font-size: 20px;
 }
-#battery{
-    padding:0 3px;
-}
+
 #bluetooth,
 #custom-cava,
-#battery{
+#battery {
     font-size: 17px;
 }
-#battery.charging,
-#battery.plugged,
-#idle_inhibitor.activated{
-    color: green;
-}
-#bluetooth.connected{
-    color: blue;
-}
+
 #clock {
     font-size: 15px;
     font-weight: bolder;
 }
 
-/* --- Ajustements Spécifiques module gauche --- */
-#icons {
-    margin-right: 10px; /* Espace entre les îlots */
+/* ==========================================================================
+   5. Dynamic colors et Spécific states
+   ========================================================================== */
+#battery.charging,
+#battery.plugged,
+#idle_inhibitor.activated {
+    color: green; /* Tip: Tu pourrais utiliser @success de Matugen ici plus tard ! */
 }
-#custom-launcher:hover, #custom-picker:hover, #idle_inhibitor:hover,#custom-music:hover,#custom-cava:hover{
-    transition: all .5s ease;
-    color:@outline;
+
+#bluetooth.connected {
+    color: blue;
 }
-#workspaces button {
+
+/* Transparence de fond pour éviter les blocs noirs GTK */
+#battery,
+#battery.warning,
+#battery.critical,
+#battery.charging,
+#battery.plugged {
+    background-color: transparent;
+}
+
+/* ==========================================================================
+   6. Interactions & Hover (Boutons et Icônes)
+   ========================================================================== */
+/* La transition sur l'état normal permet une animation fluide (Hover IN et Hover OUT) */
+#custom-launcher, 
+#custom-picker, 
+#idle_inhibitor,
+#custom-music,
+#custom-cava,
+#workspaces button,
+#tasks button {
+    transition: all 0.5s ease;
+}
+
+#custom-launcher:hover, 
+#custom-picker:hover, 
+#idle_inhibitor:hover,
+#custom-music:hover,
+#custom-cava:hover {
+    color: @outline;
+}
+
+/* ==========================================================================
+   7. Workspaces & Taskbar
+   ========================================================================== */
+#workspaces button,
+#taskbar button {
     padding: 0 5px;
 }
-#workspace button.empty{
-    color: @on_primary;
-}
-#taskbar button {
-    padding: 0px 5px;
-}
-#custom-expand_tasks {
-    margin: 0 5px;
-}
+
 #workspaces button:hover {
-color:@surface_dim;
-transition: all 0.5s ease;
-border-radius:80px;
+    color: @surface_dim;
+    border-radius: 80px;
 }
+
 #workspaces button.active {
-border-radius: 100px;
-text-shadow: 0px 0px 1.5px red;
+    border-radius: 100px;
+    text-shadow: 0px 0px 1.5px red; /* Tip: Essaye @error ou @primary ici */
 }
+
 #workspaces button.empty {
-color: @surface;
-border-radius: 100px;
+    color: @surface;
+    border-radius: 100px;
 }
-#workspaces button:not(.active):not(.empty){
+
+#workspaces button:not(.active):not(.empty) {
     color: @on_surface;
-    border-radius:100px;
+    border-radius: 100px;
     text-shadow: 0px 0px 1.5px @surface_dim;
 }
-#tasks button.active{
-background-color: @primary_container;
-border-radius:100px;
-}
-#tasks button:hover{
-background-color: @on_surface;
-border-radius: 50%;
-}
+
+/* Tasks */
 #tasks button {
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+#tasks button.active {
+    background-color: @primary_container;
+    border-radius: 100px;
+}
+
+#tasks button:hover {
+    background-color: @on_surface;
+    border-radius: 50%;
 }

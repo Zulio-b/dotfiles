@@ -113,22 +113,19 @@
     // --- 
     // --- Définitions: MODULES DE DROITE 
     // --- 
-    "custom/spotify": {
+"custom/spotify": {
         "format": "{}",
-        "tooltip":true,
-        "tooltip-format":"{}",
-        "escape": true,
         "return-type": "json",
-        "max-length": 20,
-        "on-click": "playerctl play-pause",
+        "max-length": 40,
+        "escape": true,
+        "on-click": "playerctl -p spotify play-pause",
         "on-click-right": "killall spotify",
-        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-        "on-scroll-up" : "playerctl -p spotify next",
-        "on-scroll-down" : "playerctl -p spotify previous",
-        "exec": "~/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-        "exec-if": "pgrep spotify"
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous",
+        // On enlève exec-if et on utilise directement playerctl pour plus de stabilité
+        "exec": "playerctl -p spotify metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\", \"tooltip\": \"{{artist}} - {{album}}\"}' --follow 2> /dev/null",
     },
-    "custom/spotify-prev": {
+        "custom/spotify-prev": {
         "format": "󰒮", // Icône "précédent"
         "tooltip": false,
         "on-click": "playerctl -p spotify previous"
