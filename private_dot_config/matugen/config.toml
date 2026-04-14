@@ -20,10 +20,6 @@ post_hook = "kill -SIGUSR1 $(pgrep kitty)"
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/matugen.rasi'
 
-[templates.yazi]
-input_path = '~/.config/matugen/templates/yazi-theme.toml'
-output_path = '~/.config/yazi/theme.toml'
-
 [templates.color-scheme]
 input_path = '~/.config/matugen/templates/matugen.colors'
 output_path = '~/.local/share/color-schemes/matugen.colors'
@@ -67,11 +63,6 @@ input_path = '~/.config/matugen/templates/cava-colors.ini'
 output_path = '~/.config/cava/config'
 post_hook = "pkill -USR1 cava"
 
-#[templates.steam]
-#input_path = '~/.config/matugen/templates/steam.css'
-#output_path = '~/.config/AdwSteamGtk/custom.css'
-#post_hook =  'adwaita-steam-gtk -i'
-
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc-colors'
 output_path = '~/.config/dunst/dunstrc'
@@ -80,7 +71,7 @@ post_hook = 'dunstctl reload'
 [templates.spicetify]
 input_path = '~/.config/matugen/templates/spotify-colors.ini'
 output_path = '~/.config/spicetify/Themes/matugen/color.ini'
-#post_hook = 'spicetify apply'
+post_hook = 'spicetify apply'
 
 [templates.vscode]
 input_path = "~/.config/matugen/templates/hyprlunavsc.json"
