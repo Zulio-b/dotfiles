@@ -15,7 +15,7 @@
 </p>
 
 ### 🎥 Live Demo (Dynamic Theming & Rofi)
-<video src="https://github.com/le-pape/dotfiles/raw/main/assets/video.mp4" width="100%" controls autoplay loop></video>
+<video src="https://github.com/le-pape/dotfiles/raw/main/assets/demo.mp4" width="100%" controls autoplay loop></video>
 ---
 
 ## 🧩 The Stack
