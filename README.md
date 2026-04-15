@@ -9,8 +9,13 @@
 ![Layout](https://img.shields.io/badge/Layout-AZERTY--FR-ff4444?style=flat-square)
 ![Manager](https://img.shields.io/badge/Managed_by-Chezmoi-green?style=flat-square)
 
-*(📸 **Tip:** Insert a couple of screenshots here showing different wallpapers to highlight the dynamic colors!)*
+<p align="center">
+  <img src="assets/blue.png" width="48%" />
+  <img src="assets/green.png" width="48%" />
+</p>
 
+### 🎥 Live Demo (Dynamic Theming & Rofi)
+<video src="https://github.com/le-pape/dotfiles/raw/main/assets/video.mp4" width="100%" controls autoplay loop></video>
 ---
 
 ## 🧩 The Stack
@@ -19,7 +24,8 @@
 - **Theming:** Matugen (Colors) & Kvantum (Qt)
 - **Bar:** Waybar
 - **Launcher & Menus:** Rofi (Wayland fork)
-- **Terminal:** Kitty
+- **Terminal:** Kitty 
+- **Shell:** Fish
 - **Wallpaper Engine:** Awww
 - **Dotfiles Manager:** Chezmoi
 
@@ -45,12 +51,25 @@ Make sure you install all the required packages (using `yay` or your preferred A
 yay -S hyprland awww-git matugen-bin chezmoi
 
 # UI, Fonts & Theming
-yay -S waybar rofi-lbonn-wayland-git nwg-look-bin ttf-jetbrains-mono-nerd
-yay -S qt5ct qt6ct kvantum bibata-cursor-theme-bin papirus-icon-theme
+yay -S waybar rofi-lbonn-wayland-git wlogout swaync \
+       nwg-look-bin qt5ct qt6ct kvantum \
+       bibata-cursor-theme-bin papirus-icon-theme \
+       ttf-jetbrains-mono-nerd
 
-# Apps & Utilities
-yay -S kitty dolphin firefox spotify-launcher spicetify-cli playerctl
-yay -S swayosd-git hyprlock hypridle hyprpicker grimblast-git wl-clipboard cliphist
+# Terminal & Shell
+yay -S kitty fish starship fastfetch
+
+# System & Hardware (Audio, Bluetooth, Network, Power)
+yay -S pavucontrol-qt blueman networkmanager power-profiles-daemon btop htop
+
+# Apps, Multimedia & Utilities
+yay -S firefox dolphin spotify-launcher spicetify-cli cava \
+       swayosd-git hyprlock hypridle hyprsunset hyprpicker \
+       grimblast-git wl-clipboard cliphist playerctl dunst
+```
+Then set fish as your default shell with 
+```bash
+chsh -s /usr/bin/fish
 ```
 
 Thanks to the power of `chezmoi`, once the dependencies are installed, just run:
@@ -61,6 +80,21 @@ chezmoi init --apply https://github.com/le-pape/dotfiles.git
 Log out and log back in to ensure all environment variables are applied. Once inside, press SUPER + W to set a wallpaper and let Matugen's magic work!
 
 ---
+## 🛠️ Post-Install Notes
+**1.Enable Spotify Theming**
+
+Spotify needs to be initialized before Spicetify can theme it. Run this in your terminal:
+```bash
+spotify-launcher  # Run once to download and set up Spotify folders
+spicetify backup apply
+```
+**2.Enable VSCode Theming**
+*Disclaimer : not very readable code* \
+If you want matugen colored vscode just install this extension : ```ext install HyprLuna.hyprluna-theme```, do as it says and enjoy !
+
+
+---
+
 
 ## 🎮 Shortcuts
 
@@ -71,21 +105,11 @@ Don't want to memorize everything? Press `SUPER` + `SHIFT` + `?` to open the int
 | Terminal    | `SUPER + Enter`     |
 | Launcher    | `SUPER + Space`     |
 | Wallpaper   | `SUPER + SHIFT + W` |
-| Cheat Sheet | `SUPER + SHIFT + ,` |
+| Cheat Sheet | `SUPER + SHIFT + ?` |
 | Close       | `SUPER + Q`         |
 
 ---
 
-## 🛠️ Post-Install Notes
-**1.Enable Spotify Theming**
-
-Spotify needs to be initialized before Spicetify can theme it. Run this in your terminal:
-```bash
-spotify-launcher  # Run once to download and set up Spotify folders
-spicetify backup apply
-```
-
----
 
 ## 📂 Structure
 

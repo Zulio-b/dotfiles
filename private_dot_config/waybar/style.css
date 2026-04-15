@@ -46,7 +46,7 @@ tooltip {
 
 /* Surcharge spécifique pour Spotify */
 #custom-spotify {
-    padding: 0 2px 0 7px;
+    padding: 0 7px 0 7px;
 }
 
 #system {
@@ -151,6 +151,7 @@ tooltip {
 #custom-cava,
 #workspaces button,
 #tasks button {
+    background-color: transparent;
     transition: all 0.5s ease;
 }
 
@@ -173,6 +174,7 @@ tooltip {
 #workspaces button:hover {
     color: @surface_dim;
     border-radius: 80px;
+    background-color: @outline;
 }
 
 #workspaces button.active {
@@ -203,6 +205,6 @@ tooltip {
 }
 
 #tasks button:hover {
-    background-color: @on_surface;
+    background-color: @outline;
     border-radius: 50%;
 }
