@@ -57,8 +57,8 @@
 yay -S --needed hyprland awww-git matugen-bin chezmoi
 
 # UI, Fonts & Theming
-yay -S --needed waybar rofi-lbonn-wayland-git wlogout swaync \
-       nwg-look-bin qt5ct qt6ct kvantum \
+yay -S --needed waybar rofi wlogout swaync \
+       nwg-look qt5ct qt6ct kvantum \
        bibata-cursor-theme-bin papirus-icon-theme \
        ttf-jetbrains-mono-nerd
 
