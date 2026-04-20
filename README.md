@@ -72,7 +72,7 @@ yay -S --needed pavucontrol-qt blueman power-profiles-daemon btop htop
 yay -S --needed firefox dolphin spotify-launcher spicetify-cli cava \
        swayosd-git hyprlock hypridle hyprsunset hyprpicker \
        grimblast-git wl-clipboard cliphist playerctl dunst \
-       xdg-desktop-portal-hyprland polkit-gnome
+       xdg-desktop-portal-hyprland polkit-gnome rofi-calc rofimoji
 ```
 
 ### 2. Apply dotfiles
