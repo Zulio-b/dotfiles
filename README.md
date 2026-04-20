@@ -15,8 +15,8 @@
 
 ### 🎥 Live Demo (Dynamic Theming & Rofi)
 
-<video src="https://github.com/Zulio-b/dotfiles/assets/demo.mp4" width="100%" controls autoplay loop></video>
-
+[https://github.com/Zulio-b/dotfiles/assets/demo.mp4
+](https://github.com/Zulio-b/dotfiles/assets/188205490/578666122-c7f8a5cb-30b6-4766-ade3-80ed56384692.mp4)
 
 </div>
 ---
