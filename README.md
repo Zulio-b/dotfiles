@@ -14,7 +14,9 @@
   <img src="assets/green.png" width="48%" />
 
 ### 🎥 Live Demo (Dynamic Theming & Rofi)
-<video src="https://github.com/le-pape/dotfiles/raw/main/assets/demo.mp4" width="100%" controls autoplay loop></video>
+
+<video src="https://github.com/Zulio-b/dotfiles/blob/633ceeb3a130a40214c2f687b792ec575d987839/assets/demo.mp4" width="100%" controls autoplay loop></video>
+
 
 </div>
 ---
