@@ -46,7 +46,7 @@ tooltip {
 
 /* Surcharge spécifique pour Spotify */
 #custom-spotify {
-    padding: 0 7px 0 7px;
+    padding: 0 7px;
 }
 
 #system {
@@ -124,7 +124,7 @@ tooltip {
 #battery.charging,
 #battery.plugged,
 #idle_inhibitor.activated {
-    color: green; /* Tip: Tu pourrais utiliser @success de Matugen ici plus tard ! */
+    color: green; 
 }
 
 #bluetooth.connected {
@@ -143,7 +143,6 @@ tooltip {
 /* ==========================================================================
    6. Interactions & Hover (Boutons et Icônes)
    ========================================================================== */
-/* La transition sur l'état normal permet une animation fluide (Hover IN et Hover OUT) */
 #custom-launcher, 
 #custom-picker, 
 #idle_inhibitor,
@@ -179,7 +178,7 @@ tooltip {
 
 #workspaces button.active {
     border-radius: 100px;
-    text-shadow: 0px 0px 1.5px red; /* Tip: Essaye @error ou @primary ici */
+    text-shadow: 0px 0px 1.5px red; 
 }
 
 #workspaces button.empty {
