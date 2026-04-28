@@ -73,6 +73,9 @@ yay -S --needed firefox dolphin spotify-launcher spicetify-cli cava \
        swayosd-git hyprlock hypridle hyprsunset hyprpicker \
        grimblast-git wl-clipboard cliphist playerctl dunst \
        xdg-desktop-portal-hyprland polkit-gnome rofi-calc rofimoji
+
+# File Management & Portals (Yazi Integration)
+yay -S --needed yazi xdg-desktop-portal-termfilechooser-hunkyburrito-git
 ```
 
 ### 2. Apply dotfiles
