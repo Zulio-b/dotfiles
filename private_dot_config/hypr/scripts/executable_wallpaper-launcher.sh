@@ -29,12 +29,9 @@ if [ ! -d "${cacheDir}" ] ; then
         mkdir -p "${cacheDir}"
     fi
 
-
 physical_monitor_size=24
 monitor_res=$(hyprctl monitors |grep -A2 Monitor |head -n 2 |awk '{print $1}' | grep -oE '^[0-9]+')
 
-# --- CORRECTION "bc" ---
-# Ajout d'une vérification pour s'assurer que 'bc' est installé et fonctionne
 if command -v bc &> /dev/null; then
     dotsperinch=$(echo "scale=2; $monitor_res / $physical_monitor_size" | bc | xargs printf "%.0f")
 else
@@ -42,18 +39,15 @@ else
     dotsperinch=96
 fi
 
-# Sécurité anti-division par zéro
 if [ -z "$dotsperinch" ] || [ "$dotsperinch" -eq 0 ]; then
     echo "ATTENTION: Calcul DPI échoué. Utilisation de la valeur par défaut 96 DPI." >&2
     dotsperinch=96
 fi
-# --- FIN CORRECTION "bc" ---
 
 monitor_res=$(( $monitor_res * $physical_monitor_size / $dotsperinch ))
 rofi_override="element-icon{size:${monitor_res}px;border-radius:0px;}"
 
 
-# --- CORRECTION SYNTAXE "magick" ---
 # Convert images in directory and save to cache dir
 find "${wall_dir}" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | while read -r imagen; do
     if [ -f "$imagen" ]; then
@@ -70,7 +64,6 @@ find "${wall_dir}" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -
         fi
     fi
 done
-# --- FIN CORRECTION SYNTAXE "magick" ---
 
 
 # Select a picture with rofi

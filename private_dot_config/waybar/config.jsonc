@@ -54,7 +54,7 @@
     "custom/music":{
         "format":"",
         "tooltip":false,
-        "on-click":"spotify"
+        "on-click":"spicetify apply"
     },
     "custom/cava":{
         "format":"󰺢",

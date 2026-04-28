@@ -2,10 +2,8 @@
 # hypr-cheatsheet.sh — Hyprland keybindings cheatsheet in rofi
 
 ROFI_THEME="$HOME/.config/rofi/launchers/type-1/style-3.rasi"
-# On cherche le fichier hyprland.conf par défaut si aucun argument n'est passé
 KEYBINDS_FILE="${1:-$HOME/.config/hypr/hyprland.conf}"
 
-# On exécute Python et on envoie directement la sortie (pipe) vers Rofi
 python3 - "$KEYBINDS_FILE" <<'EOF' | rofi \
     -dmenu \
     -i \

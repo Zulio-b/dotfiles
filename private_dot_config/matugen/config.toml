@@ -86,3 +86,7 @@ post_hook = 'pkill swayosd-server;setsid -f swayosd-server >/dev/null 2>&1'
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill waybar; waybar & disown'
+
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
