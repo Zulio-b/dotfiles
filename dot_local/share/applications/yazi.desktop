@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Yazi File Manager
+Icon=yazi
+Comment=Yazi file manager via Kitty with Hyprland class
+Terminal=false
+TryExec=yazi
+Exec=kitty --class yazi -e yazi %f
+Type=Application
+MimeType=inode/directory;
+Categories=System;FileManager;FileTools;ConsoleOnly
+Keywords=File;Manager;Explorer;Browser;Launcher;
+

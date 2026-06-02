@@ -1,0 +1,272 @@
+{
+    "reload_style_on_change":true,
+    // --- Configuration Générale ---
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+
+    // --- Ordonnancement des Modules ---
+    "modules-left": [
+        "group/icons",
+        "hyprland/workspaces",
+    ],
+    "modules-center": [
+        "group/time",
+    ],
+    "modules-right": [
+        "custom/spotify",
+        "group/system"
+    ],
+
+    // --- 
+    // --- Définitions: MODULES DE GAUCHE 
+    // --- 
+
+    "group/icons": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/launcher",
+            "custom/music",
+            "custom/picker",
+            "idle_inhibitor",
+            "custom/cava"
+        ]
+    },
+    "custom/launcher": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "pkill rofi || ~/.config/rofi/launchers/type-1/launcher.sh"
+    },
+    "custom/picker": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprpicker --autocopy"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "tooltip": "{status}",
+        "timeout": 60,
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "custom/music":{
+        "format":"",
+        "tooltip":false,
+        "on-click":"spotify"
+    },
+    "custom/cava":{
+        "format":"󰺢",
+        "tooltip":false,
+        "on-click":"kitty -e cava"
+    },
+
+    "group/work": {
+        "orientation": "horizontal",
+        "modules": ["hyprland/workspaces", "group/tasks"]
+    },
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "format": "{id}{windows}", 
+        "format-window-separator": " ",
+        "window-rewrite-default": " ", 
+        "window-rewrite": {
+            "class<firefox>": " ",
+            "class<kitty>": " ",
+            "class<code>": " 󰨞",
+            "class<vscode>": " 󰨞",
+            "class<spotify>": " ",
+            "class<thunar>": " 󰉋",
+            "class<discord>": " 󰙯",
+            "class<rofi>": " ",
+            "class<com.stremio.stremio>": " ",
+            "class<yazi>": " 󰇥",
+            "title<Yazi: (.*)>": " 󰇥",
+            "class<org.pulseaudio.pavucontrol>": " 󰓃",
+            "class<.pavucontrol-wrapped>": " 󰓃",
+            "class<onlyoffice>": " 󰏆",
+            "class<onlyoffice-desktopeditors>": " 󰏆",
+            "class<localsend>": " ",
+            "class<com.localsend.localsend_app>": " ",
+            "class<blueman-manager>": " 󰂯",
+            "class<steam>": " 󰓓",
+            "title<btop>": " ",
+            "class<mpv>": " "
+        },
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "sort-by-number": true
+    },
+
+    // --- 
+    // --- Définitions: MODULES DU CENTRE 
+    // --- 
+
+    "group/time": {
+        "orientation": "horizontal",
+        "modules": ["clock#time", "clock#date"]
+    },
+
+    "clock#time": {
+        "format": "{:%H:%M}",
+        "tooltip": false
+    },
+    "clock#date": {
+        "format": "{:%A %d %B}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#FF0000'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+
+    },
+
+    // --- 
+    // --- Définitions: MODULES DE DROITE 
+    // --- 
+"custom/spotify": {
+        "format": "{}",
+        "return-type": "json",
+        "max-length": 30,
+        "escape": true,
+        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "killall spotify",
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous",
+        "exec": "playerctl -p spotify metadata --format '{\"text\": \"{{title}} - {{artist}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\", \"tooltip\": \"{{title}} - {{artist}}\"}' --follow 2> /dev/null",
+    },
+
+    "group/system": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/expand",
+            "pulseaudio",
+            "bluetooth",
+            "network",
+            "group/battery",
+            "custom/power"
+        ]
+    },
+    "group/expand": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        },
+        "modules": ["custom/expand","memory", "cpu", "backlight"]
+    },
+    "custom/expand": {
+        "format": "",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {used:0.1f}G",
+        "max-length": 10,
+        "on-click":"kitty -e btop",
+        "tooltip": true,
+        "tooltip-format":"{used:0.1f}G / {total:0.1f}G"
+        },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true,
+        "on-click":"kitty -e btop"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰌵"],
+        "tooltip": false
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": "",
+        "tooltip-format": "{device_alias}",
+        "on-click-right": "~/.config/waybar/scripts/toggle_bluetooth.sh",
+        "on-click": "blueman-manager"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@",
+        "on-click-right": "pavucontrol",
+        "format-icons": {
+            "headphone": "🎧",
+            "hands-free": "🎧",
+            "headset": "🎧",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": " Connected",
+        "format-disconnected": "󰤫",
+        "format-disabled": "󰖪",
+        "tooltip-format-wifi": "{essid}",
+        "on-click": "kitty --class utility -e nmtui connect",
+        "on-click-right": "rfkill toggle wifi && notify-send 'Wifi successfully toggled'",
+    },
+    "group/battery": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-left-to-right": false,
+            "transition-duration": 500
+        },
+        "modules": [
+            "battery",
+            "power-profiles-daemon"
+        ]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "tooltip-format": "{capacity} %\nEmpty in {time}",
+        "format-icons": ["󰂎", "󰁼", "󰁿", "󰂁", "󰁹"],
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout --buttons-per-row=5",
+        "tooltip": false
+    }
+}

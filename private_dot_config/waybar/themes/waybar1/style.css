@@ -1,0 +1,157 @@
+@import "colors.css";
+
+/* --- Base --- */
+* {
+    font-family: "JetBrains", "Symbols Nerd Font", monospace;
+    font-size: 18px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar {
+    background: transparent;
+    margin: 5px 0 0 5px; 
+}
+
+tooltip{
+    color: @on_background;
+    background-color:@background;
+    border-radius: 20px;
+}
+
+tooltip label{
+    font-size: 1rem;
+}
+
+#system,
+#custom-spotify,
+#time,
+#icons{
+    font-size: 0.5em;
+    padding: 3px;
+    border-radius: 20px;
+    background-color: @primary_container;
+    color: @on_primary_container;
+    margin: 2px 4px;
+}
+
+#work{
+    font-size: 0.5em;
+    padding: 3px;
+    border-radius: 20px;
+    background-color: @primary_container;
+    color: @on_primary_container;
+    margin: 2px 4px;
+
+}
+
+/* Left Left module */
+
+#custom-music,
+#custom-picker,
+#idle_inhibitor,
+#custom-cava{
+    padding: 2px 5px;
+}
+#custom-launcher{
+    padding: 2px 5px 2px 10px;
+}
+#custom-cava{
+    padding: 2px 10px 2px 5px;
+}
+
+#idle_inhibitor.activated{
+    color: greenyellow;
+}
+
+/* Left module */
+
+#workspaces button,
+#tasks button {
+    background-color: transparent;
+    transition: all 0.4s ease;
+    margin: 0px;
+}
+
+#tasks button:hover,
+#workspaces button:hover {
+    color: @surface_dim;
+    border-radius: 80px;
+    background-color: @outline;
+    transition: all 1s ease;
+}
+
+#workspaces button.active {
+    border-radius: 100px;
+    text-shadow: 0px 0px 4px greenyellow;  
+    color: @surface;
+}
+
+#workspaces button.empty {
+    color: @surface;
+    border-radius: 100px;
+}
+
+#workspaces button:not(.active):not(.empty) {
+    color: @on_surface;
+    border-radius: 100px;
+    text-shadow: 0px 0px 1.5px @surface_dim;
+}
+
+
+/* Middle module */
+
+#clock{
+    font-weight: bolder;
+    padding: 2px 10px 2px 10px;
+    color: @tertiary;
+}
+
+/* Right module */
+
+#custom-spotify{
+    font-size: 1rem;
+    padding: 2px 10px;
+}
+
+/* Right right module */
+
+#pulseaudio,
+#network,
+#cpu,
+#battery,
+#backlight,
+#pulseaudio,
+#custom-expand,
+#power-profiles-daemon,
+#network{
+    padding: 2px 5px;
+}
+
+#battery.charging{
+    color: greenyellow;
+}
+
+#bluetooth{
+    padding: 2px 10px 2px 7px;
+}
+
+#memory{
+    padding: 2px 5px 2px 10px;
+}
+#custom-power{
+    padding: 2px 10px 2px 5px;
+}
+
+#bluetooth.connected{
+    color: aqua;
+}
+
+#pulseaudio.bluetooth{
+    padding: 2px 5px 2px 0px;
+}
+

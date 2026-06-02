@@ -1,0 +1,184 @@
+format = """
+[](color4)\
+$os\
+$username\
+[](bg:color1 fg:color4)\
+$directory\
+[](bg:color9 fg:color1)\
+$git_branch\
+$git_status\
+[](bg:color1 fg:color9)\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](bg:color9 fg:color1)\
+$docker_context\
+$conda\
+$pixi\
+[](bg:color6 fg:color9)\
+$time\
+[ ](fg:color6)\
+$line_break $character"""
+
+palette = 'colors'
+
+[palettes.colors]
+mustard = '#af8700' # example
+color1 = '{{colors.primary_fixed_dim.default.hex}}'
+color2 = '{{colors.on_primary.default.hex}}'
+color3 = '{{colors.on_surface_variant.default.hex}}'
+color4 = '{{colors.surface_container.default.hex}}'
+color5 = '{{colors.on_primary.default.hex}}'
+color6 = '{{colors.surface_dim.default.hex}}'
+color7 = '{{colors.surface.default.hex}}'
+color8 = '{{colors.primary.default.hex}}'
+color9 = '{{colors.tertiary.default.hex}}'
+
+
+"$schema" = 'https://starship.rs/config-schema.json'
+# ---------------------------------------------------------------------
+# MODULES (Styles adaptés à la palette)
+# ---------------------------------------------------------------------
+
+[os]
+disabled = false
+style = "fg:color1 bg:color4" # Fond: color4, Texte: color1
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[username]
+show_always = true
+style_user = "fg:color1 bg:color4" # Fond: color4, Texte: color1
+style_root = "fg:color1 bg:color4"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:color1 fg:color2" # Fond: color1, Texte: color2
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:color9" # Fond: color9
+format = '[[ $symbol $branch ](fg:color5 bg:color9)]($style)' # Texte: color5
+
+[git_status]
+style = "bg:color9" # Fond: color9
+format = '[[($all_status$ahead_behind )](fg:color5 bg:color9)]($style)' # Texte: color5
+
+[nodejs]
+symbol = ""
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[c]
+symbol = " "
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[cpp]
+symbol = " "
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[rust]
+symbol = ""
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[golang]
+symbol = ""
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[php]
+symbol = ""
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[java]
+symbol = ""
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[kotlin]
+symbol = ""
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[haskell]
+symbol = ""
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[python]
+symbol = ""
+style = "bg:color1" # Fond: color1
+format = '[[ $symbol( $version) ](fg:color2 bg:color1)]($style)' # Texte: color2
+
+[docker_context]
+symbol = ""
+style = "bg:color9" # Fond: color9
+format = '[[ $symbol( $context) ](fg:color5 bg:color9)]($style)' # Texte: color5
+
+[conda]
+style = "bg:color9" # Fond: color9
+format = '[[ $symbol( $environment) ](fg:color5 bg:color9)]($style)' # Texte: color5
+
+[pixi]
+style = "bg:color9" # Fond: color9
+format = '[[ $symbol( $version)( $environment) ](fg:color5 bg:color9)]($style)' # Texte: color5
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:color6" # Fond: color6
+format = '[[  $time ](fg:color3 bg:color6)]($style)' # Texte: color3
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:color9)' 
+error_symbol = '[❯](bold fg:color1)'
+vimcmd_symbol = '[❮](bold fg:color9)'
+vimcmd_replace_one_symbol = '[❮](bold fg:color1)'
+vimcmd_replace_symbol = '[❮](bold fg:color1)'
+vimcmd_visual_symbol = '[❮](bold fg:color9)'

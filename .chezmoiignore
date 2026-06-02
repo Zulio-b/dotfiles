@@ -1,0 +1,15 @@
+.config/hypr/modules/colors.lua
+.config/starship.toml
+.config/dunst/dunstrc
+.config/cava/config
+.config/rofi/matugen.rasi
+.config/waybar/colors.css
+.config/kitty/themes/theme_matugen.conf
+.config/yazi/theme.toml
+.config/btop/themes/matugen.theme
+.config/gtk-3.0/colors.css
+.config/gtk-4.0/colors.css
+.config/qt5ct/colors/matugen.conf
+.config/qt6ct/colors/matugen.conf
+.config/Kvantum/matugen/*
+.config/zathura/zathurarc
