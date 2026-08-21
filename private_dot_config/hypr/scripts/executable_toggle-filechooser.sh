@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Goal in a double file explorer config Yazi/Dolphin switch easily (NOT UP TO DATE JUST FOR INSPO)
 CONFIG_FILE="$HOME/.config/xdg-desktop-portal/hyprland-portals.conf"
 
 # Check if the config currently points to Yazi

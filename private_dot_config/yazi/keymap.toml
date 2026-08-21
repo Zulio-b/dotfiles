@@ -378,10 +378,6 @@ keymap = [
 on  = "M"
 run = "plugin mount"
 
-[[mgr.prepend_keymap]]
-on   = "p"
-run  = "plugin smart-paste"
-desc = "Paste into the hovered directory or CWD"
 
 [[mgr.prepend_keymap]]
 on  = "y"

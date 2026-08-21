@@ -9,61 +9,73 @@
 ---------------------
 ---- TAGGING --------
 ---------------------
-hl.window_rule({ name = "tag-games-steam",    match = { class = "^(steam_app_%d+)$" }, tag = "+games" })
-hl.window_rule({ name = "tag-games-scope",    match = { class = "^(gamescope)$"      }, tag = "+games" })
+hl.window_rule({ name = "tag-games-steam",   match = { class = "^(steam_app_%d+)$" }, tag = "+games" })
+hl.window_rule({ name = "tag-games-scope",   match = { class = "^(gamescope)$" },     tag = "+games" })
+hl.window_rule({name = "tag-games-citron",  match = {class = "^(org\\.citron_emu\\.citron)$",title = "^(citron \\|.*)$"},tag = "+games"})
+hl.window_rule({name = "tag-games-eden",match = {class = "^(eden)$",title = "^(Eden Nightly \\|.*)$"},tag = "+games"})
+hl.window_rule({ name = "tag-multimedia",    match = { class = "^(com.stremio.stremio|com-nuvio-app-MainKt)$" }, tag = "+multimedia" })
 
-hl.window_rule({ name = "tag-stremio",      match = { class = "^(com.stremio.stremio)$"}, tag = "+multimedia" })
-
-hl.window_rule({ name = "tag-util-blueman",   match = { class = "^(blueman-manager)$"                          }, tag = "+utility" })
-hl.window_rule({ name = "tag-util-pavuctl",   match = { class = "^(org.pulseaudio.pavucontrol)$"                           }, tag = "+utility" })
-hl.window_rule({ name = "tag-util-sysmon",    match = { class = "^(org.kde.plasma-systemmonitor)$"             }, tag = "+utility" })
-hl.window_rule({ name = "tag-util-portal",    match = { class = "^(org.freedesktop.impl.portal.desktop.kde)$"  }, tag = "+utility" })
-hl.window_rule({ name = "tag-util-gwenview",  match = { title = "^(Save Image — Gwenview)$"                    }, tag = "+utility" })
-hl.window_rule({ name = "tag-util-xdggtk",    match = { class = "^(xdg-desktop-portal-gtk)$"                   }, tag = "+utility" })
-hl.window_rule({ name = "tag-util-dolphin",   match = { class = "^(org.kde.dolphin)$"                          }, tag = "+utility" })
-
-hl.window_rule({ name = "tag-util-yazichsr",  match = { class = "^(yazi-filechooser)$"                         }, tag = "+utility" })
-hl.window_rule({ name = "tag-util-yazi",      match = { class = "^(yazi)$"                                     }, tag = "+utility" })
-hl.window_rule({ name = "tag-rofi-yazi",      match = { title = "^(Yazi: .*)$"                                     }, tag = "+utility" })
+hl.window_rule({ name = "tag-util-blueman",  match = { class = "^(blueman-manager)$" },                         tag = "+utility" })
+hl.window_rule({ name = "tag-util-pavuctl",  match = { class = "^(org.pulseaudio.pavucontrol)$" },              tag = "+utility" })
+hl.window_rule({ name = "tag-util-sysmon",   match = { class = "^(org.kde.plasma-systemmonitor)$" },            tag = "+utility" })
+hl.window_rule({ name = "tag-util-portal",   match = { class = "^(org.freedesktop.impl.portal.desktop.kde)$" }, tag = "+utility" })
+hl.window_rule({ name = "tag-util-gwenview", match = { title = "^(Save Image — Gwenview)$" },                   tag = "+utility" })
+hl.window_rule({ name = "tag-util-xdggtk",   match = { class = "^(xdg-desktop-portal-gtk)$" },                  tag = "+utility" })
+hl.window_rule({ name = "tag-util-dolphin",  match = { class = "^(org.kde.dolphin)$" },                         tag = "+utility" })
+hl.window_rule({ name = "tag-util-nmtui",    match = { title = "^(nmtui)$" },                                   tag = "+utility" })
+hl.window_rule({ name = "tag-util-yazichsr", match = { class = "^(yazi-filechooser)$" },                        tag = "+utility" })
+hl.window_rule({ name = "tag-util-yazi",     match = { class = "^(yazi)$" },                                    tag = "+utility" })
+hl.window_rule({ name = "tag-rofi-yazi",     match = { title = "^(Yazi: .*)$" },                                tag = "+utility" })
 
 ---------------------
 ---- GAME RULES -----
 ---------------------
 hl.window_rule({
-    name           = "fullscreen-multimedia",
-    match          = { tag = "games"},
-    idle_inhibit   = "always",
-    fullscreen     = true,
-    opacity        = 1.0,
-    rounding       = 0,
-    workspace      = "6",
+    name         = "fullscreen-games",
+    match        = { tag = "games" },
+    idle_inhibit = "always",
+    fullscreen   = true,
+    opacity      = 1.0,
+    rounding     = 0,
+    workspace    = "6",
+})
+
+---------------------
+---- MULTIMEDIA RULES -
+---------------------
+hl.window_rule({
+    name         = "fullscreen-multimedia",
+    match        = { tag = "multimedia" },
+    idle_inhibit = "always",
+    fullscreen   = true,
+    opacity      = 1.0,
+    rounding     = 0,
+    workspace    = "6",
 })
 
 ---------------------
 ---- UTILITY RULES --
 ---------------------
 hl.window_rule({
-    name      = "utility-float",
-    match     = { tag = "utility" },
-    float     = true,
-    size      = "monitor_w*0.5 monitor_h*0.5",
+    name  = "utility-float",
+    match = { tag = "utility" },
+    float = true,
+    size  = "monitor_w*0.5 monitor_h*0.5",
 })
 
 ---------------------
 ---- APP-SPECIFIC ---
 ---------------------
-hl.window_rule({ name = "spotify-ws",  match = { class = "^(.*Spotify.*)$" }, workspace = "5 silent" })
-hl.window_rule({ name = "steam-ws",    match = { class = "^(.*steam.*)$"   }, workspace = "6 silent" })
-hl.window_rule({ name = "stremio",match = { class = "^(.*com.stremio.stremio.*)$"   }, workspace = "6" , idle_inhibit   = "always",fullscreen= true, opacity = 1.0, rounding= 0})
-
+hl.window_rule({ name = "spotify-ws", match = { class = "^(.*Spotify.*)$" }, workspace = "5 silent" })
+hl.window_rule({ name = "steam-ws",   match = { class = "^(.*steam.*)$" },   workspace = "6 silent" })
 
 ---------------------
 ---- LAYER RULES ----
 ---------------------
 hl.layer_rule({
-    name      = "blur-logout",
-    match     = { namespace = "logout_dialog" },
-    blur      = true,
+    name  = "blur-logout",
+    match = { namespace = "logout_dialog" },
+    blur  = true,
 })
 
 hl.layer_rule({
@@ -83,8 +95,8 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name       = "fix-xwayland-drags",
-    match      = {
+    name  = "fix-xwayland-drags",
+    match = {
         class      = "^$",
         title      = "^$",
         xwayland   = true,

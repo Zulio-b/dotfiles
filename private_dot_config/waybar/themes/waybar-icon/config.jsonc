@@ -1,11 +1,9 @@
 {
     "reload_style_on_change":true,
-    // --- Configuration Générale ---
     "layer": "top",
     "position": "top",
     "height": 30,
 
-    // --- Ordonnancement des Modules ---
     "modules-left": [
         "group/icons",
         "hyprland/workspaces",
@@ -19,7 +17,7 @@
     ],
 
     // --- 
-    // --- Définitions: MODULES DE GAUCHE 
+    // --- Left modules 
     // --- 
 
     "group/icons": {
@@ -83,9 +81,13 @@
             "class<discord>": " 󰙯",
             "class<rofi>": " ",
             "class<com.stremio.stremio>": " ",
+            "class<com-nuvio-app-MainKt>": " ",
             "class<yazi>": " 󰇥",
             "title<Yazi: (.*)>": " 󰇥",
+            "title<nmtui>": " ",
             "class<org.pulseaudio.pavucontrol>": " 󰓃",
+            "class<org.citron_emu.citron>": " 󰟡",
+            "class<eden>": " 󰟡",
             "class<.pavucontrol-wrapped>": " 󰓃",
             "class<onlyoffice>": " 󰏆",
             "class<onlyoffice-desktopeditors>": " 󰏆",
@@ -93,6 +95,7 @@
             "class<com.localsend.localsend_app>": " ",
             "class<blueman-manager>": " 󰂯",
             "class<steam>": " 󰓓",
+            "class<feh>": " 󰋩",
             "title<btop>": " ",
             "class<mpv>": " "
         },
@@ -103,7 +106,7 @@
     },
 
     // --- 
-    // --- Définitions: MODULES DU CENTRE 
+    // --- Center modules 
     // --- 
 
     "group/time": {
@@ -142,7 +145,7 @@
     },
 
     // --- 
-    // --- Définitions: MODULES DE DROITE 
+    // --- Right modules 
     // --- 
 "custom/spotify": {
         "format": "{}",
@@ -174,7 +177,7 @@
             "transition-duration": 500,
             "transition-left-to-right": false
         },
-        "modules": ["custom/expand","memory", "cpu", "backlight"]
+        "modules": ["custom/expand","memory", "cpu", "backlight","hyprland/language"]
     },
     "custom/expand": {
         "format": "",
@@ -199,6 +202,13 @@
         "format-icons": ["󰌵"],
         "tooltip": false
     },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "US",
+        "format-ca(fr)": "FR-CA",
+        "format-fr": "Fr",
+    },
+
     "bluetooth": {
         "format": "",
         "format-disabled": "󰂲",

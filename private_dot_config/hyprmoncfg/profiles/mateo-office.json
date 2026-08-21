@@ -1,0 +1,122 @@
+{
+  "name": "Mateo-office",
+  "created_at": "2026-08-08T16:55:16.648148621Z",
+  "updated_at": "2026-08-08T21:19:23.467969156Z",
+  "outputs": [
+    {
+      "key": "arz|arzopa-27",
+      "match_key": "arz|arzopa-27",
+      "name": "HDMI-A-1",
+      "description": "ARZ ARZOPA-27",
+      "make": "ARZ",
+      "model": "ARZOPA-27",
+      "enabled": true,
+      "mode": "2560x1440@60.00Hz",
+      "width": 2560,
+      "height": 1440,
+      "refresh": 60,
+      "x": 1920,
+      "y": 0,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    },
+    {
+      "key": "samsung display corp.|0x41b5",
+      "match_key": "samsung display corp.|0x41b5",
+      "name": "eDP-1",
+      "description": "Samsung Display Corp. 0x41B5",
+      "make": "Samsung Display Corp.",
+      "model": "0x41B5",
+      "enabled": true,
+      "mode": "1920x1200@60.00Hz",
+      "width": 1920,
+      "height": 1200,
+      "refresh": 60,
+      "x": 0,
+      "y": 200,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    }
+  ],
+  "workspaces": {
+    "enabled": true,
+    "strategy": "sequential",
+    "max_workspaces": 10,
+    "group_size": 5,
+    "monitor_order": [
+      "samsung display corp.|0x41b5",
+      "arz|arzopa-27"
+    ],
+    "rules": [
+      {
+        "workspace": "1",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1",
+        "default": true,
+        "persistent": true
+      },
+      {
+        "workspace": "2",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1"
+      },
+      {
+        "workspace": "3",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1"
+      },
+      {
+        "workspace": "4",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1"
+      },
+      {
+        "workspace": "5",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1"
+      },
+      {
+        "workspace": "6",
+        "output_key": "arz|arzopa-27",
+        "output_name": "HDMI-A-1",
+        "default": true,
+        "persistent": true
+      },
+      {
+        "workspace": "7",
+        "output_key": "arz|arzopa-27",
+        "output_name": "HDMI-A-1"
+      },
+      {
+        "workspace": "8",
+        "output_key": "arz|arzopa-27",
+        "output_name": "HDMI-A-1"
+      },
+      {
+        "workspace": "9",
+        "output_key": "arz|arzopa-27",
+        "output_name": "HDMI-A-1"
+      },
+      {
+        "workspace": "10",
+        "output_key": "arz|arzopa-27",
+        "output_name": "HDMI-A-1"
+      }
+    ]
+  },
+  "exec": ""
+}

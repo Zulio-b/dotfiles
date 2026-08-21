@@ -15,11 +15,11 @@
 }
 {
     "label" : "sleep",
-    "action" : "loginctl lock-session && systemctl suspend",
+    "action" : "$HOME/.config/hypr/scripts/suspend.sh",
     "keybind" : "h"
 }
 {
     "label" : "lock",
-    "action" : "loginctl lock-session",
+    "action" : "$HOME/.config/hypr/scripts/lock.sh",
     "keybind" : "l"
 }

@@ -76,17 +76,27 @@ tooltip label{
     transition: all 1s ease;
 }
 
+/* 1. Active workspace WITH windows open */
 #workspaces button.active {
     border-radius: 100px;
-    text-shadow: 0px 0px 2px @primary;  
+    text-shadow: 0px 0px 3px red;
     color: @on_surface;
 }
 
-#workspaces button.empty {
+/* 2. Active workspace but NO windows are opened (Empty) */
+#workspaces button.active.empty {
+    text-shadow: 0px 0px 5px red;
+    color: @surface;
+    transition: 0s;
+}
+
+/* 3. Inactive workspace that is empty */
+#workspaces button.empty:not(.active) {
     color: @surface;
     border-radius: 100px;
 }
 
+/* 4. Inactive workspace WITH windows open */
 #workspaces button:not(.active):not(.empty) {
     color: @on_surface;
     border-radius: 100px;
@@ -116,6 +126,7 @@ tooltip label{
 #cpu,
 #battery,
 #backlight,
+#language,
 #pulseaudio,
 #custom-expand,
 #power-profiles-daemon,

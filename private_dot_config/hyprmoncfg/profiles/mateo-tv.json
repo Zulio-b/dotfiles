@@ -1,0 +1,123 @@
+{
+  "name": "Mateo-TV",
+  "created_at": "2026-08-12T19:44:38.179050821Z",
+  "updated_at": "2026-08-15T12:16:46.20157673Z",
+  "outputs": [
+    {
+      "key": "philips consumer electronics company|philips ftv|0x01010101",
+      "match_key": "philips consumer electronics company|philips ftv|0x01010101",
+      "name": "HDMI-A-1",
+      "description": "Philips Consumer Electronics Company Philips FTV 0x01010101",
+      "make": "Philips Consumer Electronics Company",
+      "model": "Philips FTV",
+      "serial": "0x01010101",
+      "enabled": true,
+      "mode": "1920x1080@60.00Hz",
+      "width": 1920,
+      "height": 1080,
+      "refresh": 60,
+      "x": -1920,
+      "y": 260,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    },
+    {
+      "key": "samsung display corp.|0x41b5",
+      "match_key": "samsung display corp.|0x41b5",
+      "name": "eDP-1",
+      "description": "Samsung Display Corp. 0x41B5",
+      "make": "Samsung Display Corp.",
+      "model": "0x41B5",
+      "enabled": true,
+      "mode": "1920x1200@60.00Hz",
+      "width": 1920,
+      "height": 1200,
+      "refresh": 60,
+      "x": 0,
+      "y": 200,
+      "scale": 1,
+      "transform": 0,
+      "bitdepth": 8,
+      "cm": "srgb",
+      "sdr_brightness": 1,
+      "sdr_saturation": 1,
+      "sdr_min_luminance": 0.2,
+      "sdr_max_luminance": 80,
+      "min_luminance": 0
+    }
+  ],
+  "workspaces": {
+    "enabled": true,
+    "strategy": "sequential",
+    "max_workspaces": 10,
+    "group_size": 5,
+    "monitor_order": [
+      "samsung display corp.|0x41b5",
+      "philips consumer electronics company|philips ftv|0x01010101"
+    ],
+    "rules": [
+      {
+        "workspace": "1",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1",
+        "default": true,
+        "persistent": true
+      },
+      {
+        "workspace": "2",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1"
+      },
+      {
+        "workspace": "3",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1"
+      },
+      {
+        "workspace": "4",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1"
+      },
+      {
+        "workspace": "5",
+        "output_key": "samsung display corp.|0x41b5",
+        "output_name": "eDP-1"
+      },
+      {
+        "workspace": "6",
+        "output_key": "philips consumer electronics company|philips ftv|0x01010101",
+        "output_name": "HDMI-A-1",
+        "default": true,
+        "persistent": true
+      },
+      {
+        "workspace": "7",
+        "output_key": "philips consumer electronics company|philips ftv|0x01010101",
+        "output_name": "HDMI-A-1"
+      },
+      {
+        "workspace": "8",
+        "output_key": "philips consumer electronics company|philips ftv|0x01010101",
+        "output_name": "HDMI-A-1"
+      },
+      {
+        "workspace": "9",
+        "output_key": "philips consumer electronics company|philips ftv|0x01010101",
+        "output_name": "HDMI-A-1"
+      },
+      {
+        "workspace": "10",
+        "output_key": "philips consumer electronics company|philips ftv|0x01010101",
+        "output_name": "HDMI-A-1"
+      }
+    ]
+  },
+  "exec": ""
+}

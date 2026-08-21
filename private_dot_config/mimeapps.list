@@ -4,3 +4,6 @@ video/x-msvideo=mpv.desktop
 video/avi=mpv.desktop
 video/msvideo=mpv.desktop
 video/mp4=mpv.desktop
+
+[Added Associations]
+text/x-lua=code.desktop;
