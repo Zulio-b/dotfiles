@@ -13,3 +13,4 @@
 .config/qt6ct/colors/matugen.conf
 .config/Kvantum/matugen/*
 .config/zathura/zathurarc
+.config/fish/completions/copilot.fish

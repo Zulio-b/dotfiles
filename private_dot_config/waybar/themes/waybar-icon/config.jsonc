@@ -84,6 +84,7 @@
             "class<com-nuvio-app-MainKt>": " ",
             "class<yazi>": " 󰇥",
             "title<Yazi: (.*)>": " 󰇥",
+            "class<org.localsend.localsend_app>": " ",
             "title<nmtui>": " ",
             "class<org.pulseaudio.pavucontrol>": " 󰓃",
             "class<org.citron_emu.citron>": " 󰟡",
