@@ -1,94 +1,147 @@
-# touticouanti 🇫🇷
+# Touticouanti
 
-> A Hyprland rice built for French AZERTY laptops — because most dotfiles out there assume QWERTY and half your binds end up on the wrong key.
+**Material You dynamic theming on Hyprland, tailored for AZERTY laptops on Arch Linux.**
 
-![EndeavourOS](https://img.shields.io/badge/EndeavourOS-Arch--based-7F3FBF?logo=archlinux&logoColor=white)
-![Hyprland](https://img.shields.io/badge/WM-Hyprland-58E1FF?logo=wayland&logoColor=white)
-![chezmoi](https://img.shields.io/badge/dotfiles-chezmoi-2E6DB4)
-![AZERTY](https://img.shields.io/badge/layout-AZERTY-blue)
+[![OS](https://img.shields.io/badge/OS-Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white)](https://archlinux.org)
+[![Compositor](https://img.shields.io/badge/WM-Hyprland_(Lua)-33ccff?style=flat-square)](https://hyprland.org)
+[![Layout](https://img.shields.io/badge/Keyboard-French_AZERTY-blue?style=flat-square)](#-keybindings)
+[![Dotfiles](https://img.shields.io/badge/Managed_by-chezmoi-green?style=flat-square&logo=chezmoi&logoColor=white)](https://chezmoi.io)
 
-## What is this
+<!-- Replace with your actual rice previews -->
+<!-- <p align="center"><img src="assets/preview.png" width="90%" alt="Desktop Preview" /></p> -->
 
-`touticouanti` is my personal Hyprland setup, managed with [chezmoi](https://www.chezmoi.io/) and running on EndeavourOS. It's tuned end-to-end for a French AZERTY laptop keyboard — binds, workspace numbers, symbols, layout switching, all of it — instead of the usual "just remap Ctrl and hope" approach most rices ship with.
+</div>
 
-Config is written in Lua (Hyprland 0.5x+ Lua config system), themed dynamically with `matugen`, and wrapped in a set of small scripts that handle the stuff Hyprland doesn't do out of the box (smart suspend, lockscreen media widget, layout-switch notifications, etc).
+---
 
-## Why AZERTY needs its own rice
+## Overview
 
-Most Hyprland configs bind workspaces to `1-9` assuming a QWERTY row. On AZERTY, the number row requires holding `Shift`, and symbols (`&é"'(-è_çà)=`) sit in totally different places. `touticouanti` fixes this at the source:
+**Touticouanti** is an Arch Linux dotfile suite built around Hyprland, configured entirely through modular Lua tables. It integrates **Matugen** to generate dynamic Material Design color palettes across GTK, Qt, terminal, lock screen, and system bars directly from the active wallpaper.
 
-- **Physical keycode binds** for workspaces (`bind = $mod, code:10, workspace, 1`, etc.) instead of symbolic binds, so `1` through `0` always work regardless of which layout is active.
-- **`resolve_binds_by_sym = 1`** used selectively for binds that should stay symbol-based (so punctuation-based keybinds resolve correctly per active layout instead of per physical key).
-- **Dual-layout switching** (AZERTY ⇄ QWERTY) baked into the keyboard config, with a `dunstify` popup confirming which layout is now active — handy since it's easy to lose track when jumping between a French laptop keyboard and an external QWERTY board.
-- Rofi, Waybar, and hyprlock scripts avoid hardcoded QWERTY-only shortcuts.
+It is designed primarily for **laptops equipped with physical French AZERTY keyboards**, providing native numeric row navigation, battery-aware power handling, and lightweight system monitors.
 
-## Stack
+---
 
-| Component | Tool |
-|---|---|
-| Distro | EndeavourOS (Arch-based) |
-| Compositor | Hyprland (Lua config) |
-| Shell | Fish + Starship |
-| Terminal | Kitty |
-| File manager | Yazi |
-| Launcher | Rofi |
-| Bar | Waybar |
-| Lockscreen | hyprlock |
-| Idle/suspend | hypridle + custom smart-suspend logic |
-| Notifications | dunst |
-| Theming engine | matugen (Material You-style dynamic color) |
-| Session/power menu | wlogout |
-| Dotfiles manager | chezmoi |
+## Core Stack
 
-## Highlights
+| Layer | Component | Notes |
+|---|---|---|
+| **Compositor** | Hyprland | Configured via modular Lua scripts |
+| **Status Bar** | Waybar | Battery, audio, network, and dynamic Matugen styles |
+| **Theme Engine** | Matugen + Kvantum | Extracts color palettes from wallpapers; applies system-wide |
+| **Application Launcher** | Rofi-Wayland | App runner, clipboard history, emoji/icon picker, calculator and keybind cheatsheet |
+| **Terminal & Shell** | Kitty + Fish / Starship | Synchronized terminal colors with persistent shell utilities |
+| **File Manager** | Yazi | Terminal file manager with `termfilechooser` portal integration |
+| **Session & Lock** | Hyprlock + Hypridle + Wlogout | Lock screen shows media controls, capslock, and battery telemetry |
+| **Displays** | `hyprmoncfg` + `hyprsunset` | Display profile switcher and blue light filter |
 
-- **Dynamic theming** — `matugen` generates a color palette from the current wallpaper and pushes it into Hyprland, Waybar, Rofi, GTK 3/4, Kitty, dunst, cava, yazi, zathura, qt5ct/qt6ct, Kvantum, hyprlock, and even a Firefox (Pywalfox) theme, all from templates in `.config/matugen/templates/`.
-- **hyprlock media widget** — shows currently playing Spotify track with album art (fetched via `curl`, written atomically to a cache path), plus a battery indicator and Caps Lock state. Two lockscreen configs (`hyprlock-player.conf` / `hyprlock-noplayer.conf`) are swapped by `lock.sh` depending on whether media is playing.
-- **Smart suspend** — `smart_suspend.sh` + hypridle skip suspending the laptop while audio is actively playing, working around hypridle's one-shot timeout quirks.
-- **Rofi everywhere** — app launcher, clipboard history (`cliphist`), emoji picker, Nerd Font icon picker, wallpaper picker with thumbnails, Waybar theme switcher with previews, and a searchable keybind cheatsheet generated straight from the Lua config.
-- **Modular Lua config** — `hyprland.lua` pulls in separate modules for binds, monitors, env vars, autostart, animations/looks, window rules, and input, instead of one giant file.
-- **Native file dialogs through Yazi** — `xdg-desktop-portal-termfilechooser` routes GTK/Firefox file pickers through Yazi in a floating, centered Hyprland window.
+---
 
-## Repo layout (chezmoi-managed)
+## Installation
 
-```
-~/.config/hypr/
-├── hyprland.lua              # entrypoint
-├── hypridle.conf
-├── hyprlock.conf
-├── hyprlock/                 # player/no-player configs, fonts, widget scripts
-├── modules/                  # binds.lua, monitors.lua, env.lua, input.lua, looks.lua, rules.lua, autostart.lua
-└── scripts/                  # lock.sh, smart_suspend.sh, rofi-*.sh, theme-gtk.sh, battery-notify.sh …
+### 1. Install Dependencies
 
-~/.config/waybar/             # bars + swappable themes
-~/.config/rofi/               # launcher, applets, color schemes
-~/.config/matugen/            # dynamic theming engine + templates for every app
-~/.config/kitty/  ~/.config/fish/  ~/.config/yazi/
-~/.config/dunst/  ~/.config/wlogout/  ~/.config/zathura/
-~/.config/gtk-3.0/  ~/.config/gtk-4.0/  ~/.config/qt5ct/  ~/.config/qt6ct/  ~/.config/Kvantum/
-~/.config/xdg-desktop-portal-termfilechooser/
-~/Pictures/wallpapers/
-```
-
-## Install
+Using an AUR helper like `yay`:
 
 ```bash
-chezmoi init --apply <your-github-username>/touticouanti
+# Core Compositor, Display, & Shell
+yay -S --needed hyprland hypridle hyprlock hyprsunset hyprpicker \
+    xdg-desktop-portal-hyprland polkit-gnome chezmoi fish starship kitty
+
+# Dynamic Theming & Engine
+yay -S --needed matugen-bin kvantum qt5ct qt6ct nwg-look swww
+
+# Bar, Launcher, & UI
+yay -S --needed waybar rofi-wayland wlogout dunst rofimoji cliphist wl-clipboard \
+    playerctl grimblast-git btop cava mpv zathura zathura-pdf-mupdf
+
+# File Manager & Portal Picker
+yay -S --needed yazi xdg-desktop-portal-termfilechooser-git
+
+# Typography & Icons
+yay -S --needed ttf-jetbrains-mono-nerd papirus-icon-theme
+
 ```
 
-Then reload Hyprland (`hyprctl reload` — mind the 0.55+ dispatch syntax changes if you're on an older config) and pick a wallpaper via `rofi-wallpaper-launcher.sh` to trigger the first `matugen` theme pass.
+> **Nvidia Users:** Follow the [Hyprland Nvidia Setup Guide](https://wiki.hyprland.org/Nvidia/) to ensure proper environment variables (`LIBVA_DRIVER_NAME`, `GBM_BACKEND`) are loaded in your display manager.
 
-### Requirements
+### 2. Deploy Dotfiles with Chezmoi
 
-- Hyprland 0.5x+ (Lua config support)
-- `matugen`, `dunst`, `rofi`, `waybar`, `hypridle`/`hyprlock`, `yazi`, `fish`, `starship`, `kitty`
-- `xdg-desktop-portal-termfilechooser` for native-feeling Yazi file dialogs
-- A French AZERTY keyboard (or at least the willingness to toggle to one)
+```bash
+chezmoi init --apply [https://github.com/](https://github.com/)<YOUR_USERNAME>/<YOUR_REPO_NAME>.git
 
-## Notes
+```
 
-This is a living config — some scripts (Bluetooth headphone wake-on-touch workarounds, etc.) are actively being debugged. Expect rough edges; check commit history for the latest fixes.
+### 3. Set Default Shell & Reload Fonts
 
-## Credits
+```bash
+chsh -s /usr/bin/fish
+fc-cache -fv
 
-Built and maintained by Jules, engineering student (SIR — Information Systems) at Polytech Nancy, currently on Erasmus in Warsaw. Inspired by the broader Hyprland ricing community — see individual template/script headers for any borrowed snippets.
+```
+
+### 4. First Boot & Color Generation
+
+Log into Hyprland. Generate your initial palette by running the wallpaper launcher:
+
+```bash
+~/.config/hypr/scripts/rofi-wallpaper-launcher.sh
+
+```
+
+---
+
+## Keybindings (AZERTY Layout)
+
+Keybindings map natively to the French AZERTY top row without requiring manual keycode workarounds.
+
+| Keybinding | Action |
+| --- | --- |
+| `SUPER + Enter` | Open Kitty terminal |
+| `SUPER + Space` | Application launcher (Rofi) |
+| `SUPER + E` | Open Yazi file manager |
+| `SUPER + Q` | Close active window |
+| `SUPER + L` | Lock screen (`hyprlock`) |
+| `SUPER + Shift + W` | Open wallpaper selector (triggers Matugen regeneration) |
+| `SUPER + Shift + ?` | View all keybindings inside Rofi cheatsheet |
+| `SUPER + [1-9, 0]` | Switch to workspace (`&`, `é`, `"`, `'`, `(`, `-`, `è`, `_`, `ç`, `à`) |
+| `SUPER + Shift + [1-9, 0]` | Move focused window to workspace |
+
+---
+
+## File Structure
+
+```text
+~/.config/
+├── hypr/
+│   ├── hyprland.lua           # Master compositor configuration
+│   ├── modules/               # Modular Lua config (binds, rules, monitors)
+│   ├── hyprlock/              # Lockscreen layouts and status scripts
+│   └── scripts/               # Wallpaper pickers, battery monitors, theme reloaders
+├── matugen/                   # Color scheme templates for GTK, Qt, Waybar, etc.
+├── waybar/                    # Status bar themes and widgets
+├── rofi/                      # Applets, launchers, and icon lists
+├── yazi/                      # Keymaps and package definitions
+└── fish/                      # Shell functions and autostart variables
+
+```
+
+---
+
+## Troubleshooting & Maintenance
+
+* **GTK/Qt Theme Synchronization:** If GTK apps fail to match your active Matugen palette after changing wallpapers, trigger the reload script manually:
+```bash
+~/.config/hypr/scripts/theme-gtk.sh
+
+```
+
+
+* **Waybar Template Warnings:** Do not overwrite `.config/waybar/config.jsonc` using raw `chezmoi add`. Modify it using `chezmoi edit ~/.config/waybar/config.jsonc` to preserve dynamic template variables.
+
+---
+
+## License
+
+Distributed under the [MIT License](https://www.google.com/search?q=LICENSE).
+

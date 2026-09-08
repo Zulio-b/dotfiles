@@ -14,3 +14,4 @@
 .config/Kvantum/matugen/*
 .config/zathura/zathurarc
 .config/fish/completions/copilot.fish
+~/.config/hyprmoncfg/profiles/
