@@ -204,8 +204,8 @@
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": "󰖁",
-        "on-click": "swayosd-client --output-volume mute-toggle",
-        "on-click-right": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle && pactl get-sink-mute @DEFAULT_SINK@",
+        "on-click": "pavucontrol",
         "format-icons": {
             "headphone": "🎧",
             "hands-free": "🎧",

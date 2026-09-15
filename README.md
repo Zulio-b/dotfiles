@@ -1,6 +1,6 @@
-# Touticouanti
+# Touticouanti 🎨
 
-**A Hyprland config, tailored for AZERTY laptops on Arch Linux.**
+## A Hyprland config, tailored for AZERTY laptops on Arch Linux.
 
 [![OS](https://img.shields.io/badge/OS-Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white)](https://archlinux.org)
 [![Compositor](https://img.shields.io/badge/WM-Hyprland_(Lua)-33ccff?style=flat-square)](https://hyprland.org)
@@ -10,7 +10,6 @@
 <!-- Replace with your actual rice previews -->
 <!-- <p align="center"><img src="assets/preview.png" width="90%" alt="Desktop Preview" /></p> -->
 
-</div>
 
 ---
 
@@ -18,9 +17,14 @@
 
 **Touticouanti** is an Arch Linux dotfile suite built for Hyprland. It integrates **Matugen** to generate dynamic Material Design color palettes from your wallpaper.
 
-It is designed primarily for **laptops equipped with French AZERTY keyboards**.
+It is designed for **laptops equipped with French AZERTY keyboards**. It may not work as intended on others.
 
 ---
+
+## General info
+
+* This is my personal hyprland config so what works for me might not work for you, and i won't provide support.
+Feel free to use whatever you want BUT **⚠️ Make sure you know what you're doing. Do not use anyone's code if you don't understand it ⚠️**
 
 ## Core Stack
 
@@ -48,13 +52,13 @@ Using an AUR helper like `yay`:
 yay -S --needed hyprland hypridle hyprlock hyprsunset hyprpicker xdg-desktop-portal-hyprland polkit-gnome chezmoi fish starship kitty
 
 # Dynamic Theming & Engine
-yay -S --needed matugen-bin kvantum qt5ct qt6ct nwg-look aww-git
+yay -S --needed matugen-bin kvantum qt5ct qt6ct nwg-look awww-git
 
 # Bar, Launcher, & UI
-yay -S --needed waybar-git rofi-wayland wlogout dunst rofimoji cliphist wl-clipboard playerctl grimblast-git btop cava mpv zathura zathura-pdf-mupdf blueman firefox pavucontrol
+yay -S --needed waybar-git rofi-wayland wlogout dunst rofimoji cliphist wl-clipboard playerctl grimblast-git btop cava mpv zathura blueman firefox pavucontrol
 
 # File Manager & Portal Picker
-yay -S --needed yazi xdg-desktop-portal-termfilechooser-git
+yay -S --needed yazi xdg-desktop-portal-termfilechooser-hunkyburrito-git
 
 # Typography & Icons
 yay -S --needed ttf-jetbrains-mono-nerd papirus-icon-theme
@@ -62,6 +66,11 @@ yay -S --needed ttf-jetbrains-mono-nerd papirus-icon-theme
 ```
 
 > **Nvidia Users:** Follow the [Hyprland Nvidia Setup Guide](https://wiki.hyprland.org/Nvidia/) to ensure proper environment variables (`LIBVA_DRIVER_NAME`, `GBM_BACKEND`) are loaded in your display manager.
+
+### Optionnal
+**Yazi implementation in firefox:** 
+Use this [xdg-desktop-portal-termfilechooser](https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser?tab=readme-ov-file#installation) to replace firefox default file picker with yazi. 
+
 
 ### 2. Deploy Dotfiles with Chezmoi
 
@@ -100,15 +109,6 @@ Keybindings map natively to the French AZERTY, those are a few practicle example
 | `SUPER + [1-9, 0]` | Switch to workspace |
 | `SUPER + Shift + [1-9, 0]` | Move focused window to workspace |
 
-## General info
-
-
-* **Yazi implementation in firefox:** 
-Use this [xdg-desktop-portal-termfilechooser](https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser?tab=readme-ov-file#installation) to replace firefox default file picker with yazi. 
-
-* **General info:** 
-This is my personal hyprland config so what works for me might not work for you, and i won't provide support.
-Feel free to use whatever you want BUT **⚠️ Make sure you know what you're doing. Do not use anyone's code if you don't understand it ⚠️**
 
 ---
 
