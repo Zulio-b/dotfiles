@@ -7,8 +7,7 @@
 [![Layout](https://img.shields.io/badge/Keyboard-French_AZERTY-blue?style=flat-square)](#-keybindings)
 [![Dotfiles](https://img.shields.io/badge/Managed_by-chezmoi-green?style=flat-square&logo=chezmoi&logoColor=white)](https://chezmoi.io)
 
-<!-- Replace with your actual rice previews -->
-<!-- <p align="center"><img src="assets/preview.png" width="90%" alt="Desktop Preview" /></p> -->
+<p align="center"><img src="assets/blue.png" width="90%"/></p> -->
 
 
 ---
@@ -19,11 +18,13 @@
 
 It is designed for **laptops equipped with French AZERTY keyboards**. It may not work as intended on others.
 
+This is my first ever rice + public repo, if something is done wrong pls let me know ^_^
+
 ---
 
 ## General info
 
-* This is my personal hyprland config so what works for me might not work for you, and i won't provide support.
+This is my personal hyprland config so what works for me might not work for you, and i won't provide support.
 Feel free to use whatever you want BUT **⚠️ Make sure you know what you're doing. Do not use anyone's code if you don't understand it ⚠️**
 
 ## Core Stack
@@ -109,6 +110,25 @@ Keybindings map natively to the French AZERTY, those are a few practicle example
 | `SUPER + [1-9, 0]` | Switch to workspace |
 | `SUPER + Shift + [1-9, 0]` | Move focused window to workspace |
 
+## Waybar
+
+I made a script so i can have multiple setup, you may put your own themes in ~/.config/waybar/themes. The script will then pickup the active waybar theme (👉) and parse the folder name as a new themes. 
+
+From left to right : 
+- Rofi search 
+- Spotify launch 
+- Hyprpicker (``SUPER + P `` otherwise)
+- Idle inhibitor (1h default)
+- Cava
+- Workspaces
+- Clock + calendar : right click = calendar month or year 
+- Multimedia player : pause, right click = kill
+- Hardware : Btop ++ 
+- Sound : pavucontrol, right click = mute toggle
+- Bluetooth : Blueman manager , right click = Bluetooth toggle
+- Wifi : nmtui
+- Battery : power-profile
+- Power : Wlogout
 
 ---
 

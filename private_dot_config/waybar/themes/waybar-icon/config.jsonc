@@ -240,7 +240,7 @@
         "format-disconnected": "󰤫",
         "format-disabled": "󰖪",
         "tooltip-format-wifi": "{essid}",
-        "on-click": "kitty --class utility -e nmtui connect",
+        "on-click": "kitty --class utility -e nmtui",
         "on-click-right": "rfkill toggle wifi && notify-send 'Wifi successfully toggled'",
     },
     "group/battery": {

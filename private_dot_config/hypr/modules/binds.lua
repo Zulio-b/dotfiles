@@ -41,6 +41,7 @@ end, { description = "Switch keyboard layout (language)" })
     hl.bind(mainMod .. " + ALT + SPACE",   hl.dsp.exec_cmd("pkill rofi || ~/.config/hypr/scripts/rofi-nerd-icon-selector.sh"),    { description = "Open Nerd Icon picker" })
     hl.bind(mainMod .. " + V",             hl.dsp.exec_cmd("pkill rofi || rofi -show clipboard -modi clipboard:~/.config/hypr/scripts/cliphist-rofi-img.sh -show-icons -config " .. rofi_theme), { description = "Open clipboard manager" })
     hl.bind(mainMod .. " + CTRL + W",      hl.dsp.exec_cmd("pkill rofi || ~/.config/hypr/scripts/rofi-themes-waybar.sh"),{ description = "Set a waybar theme" })
+    hl.bind("ALT + W",                     hl.dsp.exec_cmd("pkill rofi || ~/.config/hypr/scripts/rofi-matugen_repick-colors.sh"),{ description = "Adjust matugen colors" })
 
     -- --- Move Focus ---
     hl.bind(mainMod .. " + left",          hl.dsp.focus({ direction = "left"  }),                     { description = "Focus left" })
