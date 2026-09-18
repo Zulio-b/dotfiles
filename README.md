@@ -42,11 +42,11 @@
 
 <h4 align="center"> Locked </h4>
 
-![Locked](assets/Lock.png)
+![Locked](assets/lock.png)
 
 <h4 align="center"> Locked with music playing </h4>
 
-![Locked with music playing](assets/lock_music.png)
+![Locked with music playing](assets/lock-music.png)
 
 </details>
 
@@ -160,6 +160,7 @@ fc-cache -fv
 Reboot. Log into Hyprland. Generate your initial palette by changing wallpaper ``` SUPER + W ``` (random) or `` SUPER + MAJ + W `` (picker)
 
 ---
+
 
 ## Keybindings (AZERTY Layout)
 
