@@ -7,6 +7,8 @@
 [![Layout](https://img.shields.io/badge/Keyboard-French_AZERTY-blue?style=flat-square)](#-keybindings)
 [![Dotfiles](https://img.shields.io/badge/Managed_by-chezmoi-green?style=flat-square&logo=chezmoi&logoColor=white)](https://chezmoi.io)
 
+![Main](assets/main.png)
+
 # Screenshots
 
 <details>
@@ -17,7 +19,7 @@
 </details>
 
 <details>
-<summary size-fonts=15px>💻 Rofi</summary>
+<summary>💻 Rofi</summary>
 
 <h4 align="center"> Menu </h4>
 
@@ -69,7 +71,7 @@
 <summary>📊 Waybar</summary>
 <h4 align="center"> Waybar </h4>
 
-![Yazi](assets/waybar.png)
+![Waybar](assets/waybar.png)
 </details>
 
 ---
@@ -135,7 +137,7 @@ yay -S --needed ttf-jetbrains-mono-nerd papirus-icon-theme
 
 > **Nvidia Users:** Follow the [Hyprland Nvidia Setup Guide](https://wiki.hyprland.org/Nvidia/) to ensure proper environment variables (`LIBVA_DRIVER_NAME`, `GBM_BACKEND`) are loaded in your display manager.
 
-### Optionnal
+### Optional
 **Yazi implementation in firefox:** 
 Use this [xdg-desktop-portal-termfilechooser](https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser?tab=readme-ov-file#installation) to replace firefox default file picker with yazi. 
 
@@ -157,14 +159,14 @@ fc-cache -fv
 
 ### 4. First Boot & Color Generation
 
-Reboot. Log into Hyprland. Generate your initial palette by changing wallpaper ``` SUPER + W ``` (random) or `` SUPER + MAJ + W `` (picker)
+Reboot. Log into Hyprland. Generate your initial palette by changing wallpaper ``` SUPER + W ``` (random) or `` SUPER + SHIFT + W `` (picker)
 
 ---
 
 
 ## Keybindings (AZERTY Layout)
 
-Keybindings map natively to the French AZERTY, those are a few practicle examples.
+Keybindings map natively to the French AZERTY, those are a few practical examples.
 
 | Keybinding | Action |
 | --- | --- |
@@ -202,8 +204,8 @@ From left to right :
 # Thanks to
  - [JaKooLit](https://github.com/JaKooLit) for the scripts !
  - [adi1090x](https://github.com/adi1090x/rofi) rofi themes inspo !
- - The whole ricing community on [r/unixporn](https://www.reddit.com/r/unixporn/)for the inspo and help.
- - I may used a lot of other rices, the code will have the creator's name. 
+ - The whole ricing community on [r/unixporn](https://www.reddit.com/r/unixporn/) for the inspo and help.
+ - I may have borrowed elements from other rices, the code will have the creator's name. 
 
 ## License
 
