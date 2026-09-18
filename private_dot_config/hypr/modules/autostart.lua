@@ -23,8 +23,9 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("cliphist wipe") -- Clipboard manager (Text)
     hl.exec_cmd("wl-paste --type text --watch cliphist store") -- Clipboard manager (Text)
     hl.exec_cmd("wl-paste --type image --watch cliphist store") -- Clipboard manager (Images)
+    hl.exec_cmd("rm -f ~/.cache/cliphist/db") -- Reset cliphist ID number
     hl.exec_cmd("~/.config/hypr/scripts/battery-notify.sh")
     hl.exec_cmd("hypridle") -- Idle management daemon
     hl.exec_cmd("hyprmoncfgd --monitors-conf ~/.config/hypr/modules/monitors.lua") -- Monitor management daemon
-
+    
 end)

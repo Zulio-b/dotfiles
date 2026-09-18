@@ -1,14 +1,76 @@
 # Touticouanti 🎨
 
-## A Hyprland config, tailored for AZERTY laptops on Arch Linux.
+## A Hyprland config, tailored for AZERTY laptops on Arch based Linux.
 
 [![OS](https://img.shields.io/badge/OS-Arch_Linux-1793D1?style=flat-square&logo=arch-linux&logoColor=white)](https://archlinux.org)
 [![Compositor](https://img.shields.io/badge/WM-Hyprland_(Lua)-33ccff?style=flat-square)](https://hyprland.org)
 [![Layout](https://img.shields.io/badge/Keyboard-French_AZERTY-blue?style=flat-square)](#-keybindings)
 [![Dotfiles](https://img.shields.io/badge/Managed_by-chezmoi-green?style=flat-square&logo=chezmoi&logoColor=white)](https://chezmoi.io)
 
-<p align="center"><img src="assets/blue.png" width="90%"/></p> -->
+# Screenshots
 
+<details>
+<summary>📈 Idle</summary>
+<h4 align="center"> Idle </h4>
+
+![Idle](assets/idle.png)
+</details>
+
+<details>
+<summary size-fonts=15px>💻 Rofi</summary>
+
+<h4 align="center"> Menu </h4>
+
+![Launcher](assets/launcher.png)
+
+<h4 align="center"> Wallpaper Selector </h4>
+
+![Wallpapers](assets/Wallpaper.png)
+
+<h4 align="center"> Clipboard </h4>
+
+![Clipboard](assets/clipboard.png)
+
+<h4 align="center"> Emoji Selector </h4>
+
+![Emoji](assets/emoji.png)
+
+</details>
+
+<details>
+<summary>🔓 Hyprlock</summary>
+
+<h4 align="center"> Locked </h4>
+
+![Locked](assets/Lock.png)
+
+<h4 align="center"> Locked with music playing </h4>
+
+![Locked with music playing](assets/lock_music.png)
+
+</details>
+
+
+<details>
+<summary>🔑 Wlogout</summary>
+<h4 align="center"> Wlogout </h4>
+
+![Wlogout](assets/power.png)
+</details>
+
+<details>
+<summary>🦆 Yazi</summary>
+<h4 align="center"> Yazi </h4>
+
+![Yazi](assets/yazi.png)
+</details>
+
+<details>
+<summary>📊 Waybar</summary>
+<h4 align="center"> Waybar </h4>
+
+![Yazi](assets/waybar.png)
+</details>
 
 ---
 
@@ -20,7 +82,12 @@ It is designed for **laptops equipped with French AZERTY keyboards**. It may not
 
 This is my first ever rice + public repo, if something is done wrong pls let me know ^_^
 
+## Disclaimer 
+
+I have used LLM to help me code and approach concepts i didn't know of. I still have reviewed everything on my own. No more secrets ! 
+
 ---
+
 
 ## General info
 
@@ -90,7 +157,7 @@ fc-cache -fv
 
 ### 4. First Boot & Color Generation
 
-Log into Hyprland. Generate your initial palette by changing wallpaper ``` SUPER + W ``` (random) or `` SUPER + MAJ + W ``
+Reboot. Log into Hyprland. Generate your initial palette by changing wallpaper ``` SUPER + W ``` (random) or `` SUPER + MAJ + W `` (picker)
 
 ---
 
@@ -112,7 +179,7 @@ Keybindings map natively to the French AZERTY, those are a few practicle example
 
 ## Waybar
 
-I made a script so i can have multiple setup, you may put your own themes in ~/.config/waybar/themes. The script will then pickup the active waybar theme (👉) and parse the folder name as a new themes. 
+I made a script so i can have multiple setup, you may put your own setup in ~/.config/waybar/themes. The script (bind = ``SUPER + CTRL + W``) will then pickup the active waybar theme (👉) and parse the folder name as a new themes. 
 
 From left to right : 
 - Rofi search 
@@ -131,6 +198,11 @@ From left to right :
 - Power : Wlogout
 
 ---
+# Thanks to
+ - [JaKooLit](https://github.com/JaKooLit) for the scripts !
+ - [adi1090x](https://github.com/adi1090x/rofi) rofi themes inspo !
+ - The whole ricing community on [r/unixporn](https://www.reddit.com/r/unixporn/)for the inspo and help.
+ - I may used a lot of other rices, the code will have the creator's name. 
 
 ## License
 
