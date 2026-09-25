@@ -40,6 +40,7 @@ main() {
 
     choice=${choice#"$MARKER "}
     apply_theme "$choice"
+    pkill waybar && waybar &
 }
 
 if pgrep -x "rofi" >/dev/null; then

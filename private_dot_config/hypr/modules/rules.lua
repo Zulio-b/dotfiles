@@ -27,6 +27,8 @@ hl.window_rule({ name = "tag-util-nmtui",    match = { title = "^(nmtui)$" },   
 hl.window_rule({ name = "tag-util-yazichsr", match = { class = "^(yazi-filechooser)$" },                        tag = "+utility" })
 hl.window_rule({ name = "tag-util-yazi",     match = { class = "^(yazi)$" },                                    tag = "+utility" })
 hl.window_rule({ name = "tag-rofi-yazi",     match = { title = "^(Yazi: .*)$" },                                tag = "+utility" })
+hl.window_rule({ name = "tag-python-module", match = { class = "^(python3)$" },                                 tag = "+utility" })
+
 
 ---------------------
 ---- GAME RULES -----

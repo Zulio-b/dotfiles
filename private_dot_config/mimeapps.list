@@ -4,6 +4,18 @@ video/x-msvideo=mpv.desktop
 video/avi=mpv.desktop
 video/msvideo=mpv.desktop
 video/mp4=mpv.desktop
+image/jpeg=imv.desktop
+image/png=imv.desktop
+image/gif=imv.desktop
+image/webp=imv.desktop
+image/bmp=imv.desktop
+image/svg+xml=imv.desktop
+x-scheme-handler/pttp=CiscoPacketTracerPtsa-9.0.1.desktop
+application/x-pka=CiscoPacketTracer-9.0.1.desktop
+application/x-pkt=CiscoPacketTracer-9.0.1.desktop
+application/x-pkz=CiscoPacketTracer-9.0.1.desktop
+application/x-pksz=CiscoPacketTracer-9.0.1.desktop
 
 [Added Associations]
 text/x-lua=code.desktop;
+text/calendar=vim.desktop;

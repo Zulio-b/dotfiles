@@ -14,5 +14,7 @@
 .config/Kvantum/matugen/*
 .config/zathura/zathurarc
 .config/fish/completions/copilot.fish
-~/.config/hyprmoncfg/profiles/
-~/Pictures/wallpapers/
+.config/hyprmoncfg/profiles/
+.config/waybar/config.jsonc
+.config/waybar/colors.css
+Pictures/wallpapers/

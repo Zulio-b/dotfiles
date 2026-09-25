@@ -17,6 +17,7 @@ show_symlink   = true
 scrolloff      = 5
 mouse_events   = [ "click", "scroll", "drag" ]
 
+
 [preview]
 wrap            = "no"
 tab_size        = 2
@@ -31,7 +32,7 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 edit = [
-	{ run = "${EDITOR:-vi} %s", desc = "$EDITOR",      for = "unix", block = true },
+	{ run = "${EDITOR:-vi} %s", desc = "$EDITOR",      for = "unix" },
 	{ run = "code %s",          desc = "code",         for = "windows", orphan = true },
 	{ run = "code -w %s",       desc = "code (block)", for = "windows", block = true },
 ]
@@ -254,3 +255,14 @@ sort_by      	 = "none"
 sort_sensitive = false
 sort_reverse 	 = false
 sort_translit  = false
+
+[[plugin.prepend_fetchers]]
+url   = "*"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+url   = "*/"
+run   = "git"
+group = "git"
+

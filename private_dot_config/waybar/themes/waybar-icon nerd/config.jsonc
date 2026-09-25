@@ -75,7 +75,7 @@
             "class<firefox>": " ",
             "class<kitty>": " ",
             "class<code>": " 󰨞",
-            "class<vscode>": " 󰨞",
+            "class<com.microsoft.VSCode>": " 󰨞",
             "class<spotify>": " ",
             "class<thunar>": " 󰉋",
             "class<discord>": " 󰙯",
