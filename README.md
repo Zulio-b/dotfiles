@@ -137,11 +137,6 @@ yay -S --needed ttf-jetbrains-mono-nerd papirus-icon-theme
 
 > **Nvidia Users:** Follow the [Hyprland Nvidia Setup Guide](https://wiki.hyprland.org/Nvidia/) to ensure proper environment variables (`LIBVA_DRIVER_NAME`, `GBM_BACKEND`) are loaded in your display manager.
 
-### Optional
-**Yazi implementation in firefox:** 
-Use this [xdg-desktop-portal-termfilechooser](https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser?tab=readme-ov-file#installation) to replace firefox default file picker with yazi. 
-
-
 ### 2. Deploy Dotfiles with Chezmoi
 
 ```bash
@@ -159,7 +154,17 @@ fc-cache -fv
 
 ### 4. First Boot & Color Generation
 
-Reboot. Log into Hyprland. Generate your initial palette by changing wallpaper ``` SUPER + W ``` (random) or `` SUPER + SHIFT + W `` (picker)
+Reboot. Log into Hyprland. Generate your initial palette by changing wallpaper ``` SUPER + W ``` (random) or `` SUPER + SHIFT + W `` (picker). And if you're not happy with the colors it picked fine pick them with ``ALT + W``
+
+### Optional
+**Yazi :** 
+
+- **Implementation in firefox:** Use this [xdg-desktop-portal-termfilechooser](https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser?tab=readme-ov-file#installation) to replace firefox default file picker with yazi. 
+
+- **Install my Yazi's addons** : ```ya pkg install```
+
+**Waybar configs:**
+I made a script so i can have multiple setup, you may put your own setup in ~/.config/waybar/themes/. The script (bind = ``SUPER + CTRL + W``) will then pickup the active waybar theme (👉) and parse the folder name as a new themes. 
 
 ---
 
@@ -180,26 +185,6 @@ Keybindings map natively to the French AZERTY, those are a few practical example
 | `SUPER + [1-9, 0]` | Switch to workspace |
 | `SUPER + Shift + [1-9, 0]` | Move focused window to workspace |
 
-## Waybar
-
-I made a script so i can have multiple setup, you may put your own setup in ~/.config/waybar/themes. The script (bind = ``SUPER + CTRL + W``) will then pickup the active waybar theme (👉) and parse the folder name as a new themes. 
-
-From left to right : 
-- Rofi search 
-- Spotify launch 
-- Hyprpicker (``SUPER + P `` otherwise)
-- Idle inhibitor (1h default)
-- Cava
-- Workspaces
-- Clock + calendar : right click = calendar month or year 
-- Multimedia player : pause, right click = kill
-- Hardware : Btop ++ 
-- Sound : pavucontrol, right click = mute toggle
-- Bluetooth : Blueman manager , right click = Bluetooth toggle
-- Wifi : nmtui
-- Battery : power-profile
-- Power : Wlogout
-
 ---
 # Thanks to
  - [JaKooLit](https://github.com/JaKooLit) for the scripts !
@@ -207,7 +192,6 @@ From left to right :
  - The whole ricing community on [r/unixporn](https://www.reddit.com/r/unixporn/) for the inspo and help.
  - I may have borrowed elements from other rices, the code will have the creator's name. 
 
-## License
+# License
 
 Distributed under the [MIT License](https://www.google.com/search?q=LICENSE).
-
