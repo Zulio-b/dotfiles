@@ -18,3 +18,5 @@
 .config/waybar/colors.css
 .config/waybar/colors.css
 Pictures/wallpapers/
+.config/yazi/plugins
+.config/yazi/flavors

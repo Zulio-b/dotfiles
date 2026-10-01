@@ -5,6 +5,19 @@ hl.monitor({
   mode = "1920x1200@60.00",
   position = "0x200",
   scale = 1,
+  vrr = 0,
+  sdr_min_luminance = 0.2,
+  sdr_max_luminance = 80,
+})
+
+hl.monitor({
+  output = "desc:Philips Consumer Electronics Company Philips UHDTV 0x01010101",
+  mode = "3840x2160@60.00",
+  position = "1920x0",
+  scale = 1,
+  vrr = 0,
+  bitdepth = 10,
+  cm = "auto",
   sdr_min_luminance = 0.2,
   sdr_max_luminance = 80,
 })

@@ -184,6 +184,14 @@ previewers = [
 	{ url = "*", run = "file" },
 ]
 
+prepend_previewers = [
+{ url = "*.docx", run = 'piper -- unzip -p "$1" word/document.xml | head -c 150000 | sed "s|</w:p>|\n|g; s/<[^>]*>//g; s/<[^>]*$//; s/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g" | cat -s' },
+{ url = "*.odt",  run = 'piper -- unzip -p "$1" content.xml | head -c 150000 | sed "s|</text:[ph]>|\n|g; s/<[^>]*>//g; s/<[^>]*$//; s/&amp;/\&/g" | cat -s' },
+{ url = "*.pptx", run = 'piper -- unzip -p "$1" "ppt/slides/slide[1-3].xml" | sed "s|</a:p>|\n|g; s/<[^>]*>//g; s/&amp;/\&/g" | cat -s' },
+{ url = "*.xlsx", run = 'piper -- xlsx2csv -d tab "$1" | head -n 60' },
+{ url = "*.{ods,odp}", run = 'piper -- unzip -p "$1" content.xml | head -c 150000 | sed "s|</text:[ph]>|\n|g; s/<[^>]*>//g; s/<[^>]*$//" | cat -s' },
+]
+
 [input]
 cursor_blink = false
 
