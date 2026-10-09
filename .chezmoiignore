@@ -16,7 +16,6 @@
 .config/hyprmoncfg/profiles/
 .config/waybar/config.jsonc
 .config/waybar/colors.css
-.config/waybar/colors.css
 .config/yazi/plugins
 .config/yazi/flavors
 assets/
